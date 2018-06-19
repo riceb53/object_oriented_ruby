@@ -44,16 +44,23 @@ class Shoe
 
 
   def shoe_info
-    p name
+    p "Name: #{name}, Color: #{color}, Price: #{price} Sale: #{sale}"
   end
 
 end
 
-shoe = Shoe.new("sandals", "camel", 10, true)
-p shoe.sale
-shoe.sale = false
-p shoe.sale
+shoe1 = Shoe.new("sandals", "camel", 10, true)
+shoe2 = Shoe.new("flip flops", "red", 5, true)
+shoe3 = Shoe.new("boots", "brown", 100, false)
 
-p shoe.price
-shoe.price = 25
-p shoe.price
+shoe1.shoe_info
+shoe2.shoe_info
+shoe3.shoe_info
+
+# p shoe.sale
+# shoe.sale = false
+# p shoe.sale
+
+# p shoe.price
+# shoe.price = 25
+# p shoe.price
