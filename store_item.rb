@@ -11,6 +11,7 @@
 # p shoe3
 
 class Shoe
+
   def initialize(input_name, input_color, input_price, input_sale)
     @name = input_name
     @color = input_color
@@ -18,9 +19,12 @@ class Shoe
     @sale = input_sale
   end
 
-  def name
-    @name
-  end
+  attr_reader :name, :color, :price, :sale
+  attr_writer :price, :sale
+
+  # def name
+  #   @name
+  # end
 
   def color
     @color
@@ -53,9 +57,11 @@ shoe1 = Shoe.new("sandals", "camel", 10, true)
 shoe2 = Shoe.new("flip flops", "red", 5, true)
 shoe3 = Shoe.new("boots", "brown", 100, false)
 
-shoe1.shoe_info
-shoe2.shoe_info
-shoe3.shoe_info
+p shoe1.name
+
+# shoe1.shoe_info
+# shoe2.shoe_info
+# shoe3.shoe_info
 
 # p shoe.sale
 # shoe.sale = false
