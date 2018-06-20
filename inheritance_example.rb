@@ -34,7 +34,7 @@ class Bike < Performance
 
 end
 
-car = Car.new
+car1 = Car.new
 car.honk_horn
-bike = Bike.new
+bike1 = Bike.new
 bike.ring_bell
