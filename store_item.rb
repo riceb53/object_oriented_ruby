@@ -12,11 +12,11 @@
 
 class Shoe
 
-  def initialize(input_name, input_color, input_price, input_sale)
-    @name = input_name
-    @color = input_color
-    @price = input_price
-    @sale = input_sale
+  def initialize(input_option)
+    @name = input_option[:name]
+    @color = input_option[:color]
+    @price = input_option[:price]
+    @sale = input_option[:sale]
   end
 
   attr_reader :name, :color, :price, :sale
@@ -26,25 +26,25 @@ class Shoe
   #   @name
   # end
 
-  def color
-    @color
-  end
+  # def color
+  #   @color
+  # end
 
-  def price
-    @price
-  end
+  # def price
+  #   @price
+  # end
 
-  def price=(input_price)
-    @price = input_price
-  end
+  # def price=(input_price)
+  #   @price = input_price
+  # end
 
-  def sale
-      @sale
-  end
+  # def sale
+  #     @sale
+  # end
 
-  def sale=(input_sale)
-    @sale = input_sale
-  end
+  # def sale=(input_sale)
+  #   @sale = input_sale
+  # end
 
 
   def shoe_info
@@ -53,19 +53,18 @@ class Shoe
 
 end
 
-shoe1 = Shoe.new("sandals", "camel", 10, true)
-shoe2 = Shoe.new("flip flops", "red", 5, true)
-shoe3 = Shoe.new("boots", "brown", 100, false)
+shoe1 = Shoe.new({:name => "sandals", :color => "camel", :price => 10, :sale => true})
+shoe2 = Shoe.new(name: "flip flops", color: "red", price: 5, sale: true)
+shoe3 = Shoe.new(name: "boots", color: "brown", price: 100, sale:false)
 
-p shoe1.name
 
-# shoe1.shoe_info
-# shoe2.shoe_info
-# shoe3.shoe_info
+shoe1.shoe_info
+shoe2.shoe_info
+shoe3.shoe_info
 
-# p shoe.sale
-# shoe.sale = false
-# p shoe.sale
+p shoe1.sale
+shoe1.sale = false
+p shoe1.sale
 
 # p shoe.price
 # shoe.price = 25
