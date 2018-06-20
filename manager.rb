@@ -1,5 +1,5 @@
 class Employee
-  attr_reader :first_name, :last_name, :active
+  attr_reader :first_name, :last_name, :active, :salary
   attr_writer :active
 
   def initialize(input_options)
@@ -24,6 +24,7 @@ employee1.print_info
 employee2.print_info
 
 class Manager < Employee
+
   def initialize(input_options)
     super
     @employees = input_options[:employees]
@@ -34,8 +35,17 @@ class Manager < Employee
     # use email sending library...
     puts "Email sent!"
   end
+
+  def give_all_raises
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+  end
+
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
+
+p manager.give_all_raises
